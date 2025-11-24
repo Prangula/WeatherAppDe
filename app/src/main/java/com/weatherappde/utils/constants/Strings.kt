@@ -28,4 +28,5 @@ object Strings {
     const val MODERATE_THUNDERSTORM = "Moderate thunderstorm"
     const val SLIGHT_HAIL_THUNDERSTORM = "Thunderstorm with slight hail"
     const val HEAVY_HAIL_THUNDERSTORM = "Thunderstorm with heavy hail"
+    const val WEATHER_ENDPOINT = "v1/forecast?hourly=temperature_2m,weathercode,relativehumidity_2m,windspeed_10m,pressure_msl"
 }
