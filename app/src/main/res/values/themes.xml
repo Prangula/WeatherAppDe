@@ -1,5 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="Theme.WeatherAppDe" parent="android:Theme.Material.Light.NoActionBar" />
+    <style name="Base.Theme.WeatherAppDe" parent="android:Theme.Material.Light.NoActionBar" />
+
+    <style name="Theme.WeatherAppDe" parent="Base.Theme.WeatherAppDe">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:navigationBarColor">@color/backgroundColor</item>
+        <item name="android:statusBarColor">@color/backgroundColor</item>
+    </style>
+
+    <style name="Theme.WeatherAppDe.SplashScreen" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/backgroundColor</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_splash</item>
+        <item name="postSplashScreenTheme">@style/Theme.WeatherAppDe</item>
+    </style>
 </resources>
