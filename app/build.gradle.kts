@@ -10,7 +10,7 @@ android {
 
     defaultConfig {
         applicationId = "com.weatherappde"
-        minSdk = 21
+        minSdk = 23
         targetSdk = 36
         versionCode = 1
         versionName = "1.0"
@@ -56,4 +56,30 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+    // Koin components
+    implementation(libs.koin.android)
+    // Coroutines LifeCycle
+    implementation(libs.kotlinx.coroutines.core)
+    implementation(libs.kotlinx.coroutines.android)
+    implementation(libs.androidx.lifecycle.runtime.ktx)
+    implementation(libs.androidx.lifecycle.viewmodel.ktx)
+    // Fragment KTX for viewModels() delegate
+    implementation(libs.androidx.fragment.ktx)
+    implementation(libs.material.v190)
+    // Fragments
+    implementation(libs.androidx.navigation.fragment.ktx)
+    implementation(libs.androidx.navigation.ui.ktx)
+    implementation(platform(libs.kotlin.bom))
+    implementation(kotlin("script-runtime"))
+    // Retrofit
+    implementation(libs.dexter)
+    implementation(libs.retrofit)
+    implementation(libs.converter.gson)
+    // Glide
+    implementation(libs.glide)
+    implementation(libs.androidx.core.splashscreen)
+    // CircleImageView
+    implementation(libs.circleimageview)
+    // Preferences
+    implementation (libs.androidx.datastore.preferences)
 }
