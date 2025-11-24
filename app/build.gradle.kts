@@ -82,4 +82,6 @@ dependencies {
     implementation(libs.circleimageview)
     // Preferences
     implementation (libs.androidx.datastore.preferences)
+    // Location Services
+    implementation(libs.play.services.location)
 }

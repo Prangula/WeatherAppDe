@@ -19,6 +19,7 @@ koinAndroid = "3.4.0"
 kotlinBom = "1.8.0"
 materialVersion = "1.12.0"
 navVersion = "2.9.0"
+playServicesLocation = "21.3.0"
 retrofit = "2.9.0"
 
 [libraries]
@@ -42,6 +43,7 @@ kotlin-bom = { module = "org.jetbrains.kotlin:kotlin-bom", version.ref = "kotlin
 kotlinx-coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "coroutineVersion" }
 kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutineVersion" }
 material-v190 = { module = "com.google.android.material:material", version.ref = "materialVersion" }
+play-services-location = { module = "com.google.android.gms:play-services-location", version.ref = "playServicesLocation" }
 retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
 androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activityCompose" }
 androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "composeBom" }
