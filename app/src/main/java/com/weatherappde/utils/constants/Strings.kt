@@ -30,4 +30,5 @@ object Strings {
     const val HEAVY_HAIL_THUNDERSTORM = "Thunderstorm with heavy hail"
     const val WEATHER_ENDPOINT = "v1/forecast?hourly=temperature_2m,weathercode,relativehumidity_2m,windspeed_10m,pressure_msl"
     const val UNKNOWN_ERROR = "Unknown Error"
+    const val BASE_URL = "https://api.open-meteo.com/"
 }
