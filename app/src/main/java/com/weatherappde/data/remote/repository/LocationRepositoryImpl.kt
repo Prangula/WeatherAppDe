@@ -28,7 +28,7 @@ class LocationRepositoryImpl(
             application.getSystemService(Context.LOCATION_SERVICE) as LocationManager
         val isGpsEnabled = locationManger.isProviderEnabled(LocationManager.NETWORK_PROVIDER) ||
                 locationManger.isProviderEnabled(LocationManager.GPS_PROVIDER)
-        if (!hasCoarseLocation || !hasFineLocation || isGpsEnabled) {
+        if (!hasCoarseLocation || !hasFineLocation || !isGpsEnabled) {
             return null
         }
 
