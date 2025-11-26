@@ -8,6 +8,8 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -24,20 +26,26 @@ import com.weatherappde.presentation.ui.theme.CardBackGroundColor
 @RequiresApi(Build.VERSION_CODES.O)
 @Composable
 fun WeatherScreen(state: WeatherState) {
+    val scrollState = rememberScrollState()
     Box(
         modifier = Modifier
             .fillMaxSize()
             .background(color = BackgroundColor)
     ) {
         Column(
-            modifier = Modifier.fillMaxSize()
+            modifier = Modifier
+                .fillMaxSize()
         ) {
             WeatherCard(
                 state = state,
                 cardBackgroundColor = CardBackGroundColor
             )
             Spacer(modifier = Modifier.height(16.dp))
-            WeatherItem(state = state)
+            Column(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .verticalScroll(scrollState)
+            ) { WeatherItem(state = state) }
         }
         if (state.isLoading) {
             CircularProgressIndicator(modifier = Modifier.align(Alignment.Center))

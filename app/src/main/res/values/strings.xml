@@ -6,4 +6,6 @@
     <string name="percent">%</string>
     <string name="km_h">km/h</string>
     <string name="current_day">Today</string>
+    <string name="tomorrow">Tomorrow</string>
+    <string name="day_after_tomorrow">Day after tomorrow</string>
 </resources>
