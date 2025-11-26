@@ -18,6 +18,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.weatherappde.R
 import com.weatherappde.presentation.state.WeatherState
+import com.weatherappde.utils.constants.Strings
 
 @RequiresApi(Build.VERSION_CODES.O)
 @Composable
@@ -25,29 +26,41 @@ fun WeatherItem(
     state: WeatherState,
     modifier: Modifier = Modifier
 ) {
-    // get(0) means today, 1 means tomorrow ...
-    state.weatherInfo?.weatherDataPerDay?.get(1)?.let { data ->
-        Column(
-            modifier = modifier
-                .fillMaxWidth()
-                .padding(horizontal = 16.dp)
-        ) {
-            Text(
-                text = stringResource(R.string.current_day),
-                fontSize = 20.sp,
-                color = Color.White
-            )
-            Spacer(modifier = Modifier.height(16.dp))
-            LazyRow {
-                items(data) { weatherData ->
-                    WeatherHourlyDisplay(
-                        weatherDataDomain = weatherData,
-                        modifier = Modifier
-                            .height(100.dp)
-                            .padding(horizontal = 16.dp),
+    state.weatherInfo?.weatherDataPerDay?.values?.toList()?.take(3)
+        ?.forEachIndexed { index, dayData ->
+            Column(
+                modifier = modifier
+                    .fillMaxWidth()
+                    .padding(
+                        start = 16.dp,
+                        end = 16.dp,
+                        bottom = 32.dp
                     )
+            ) {
+                val dayText = when (index) {
+                    0 -> stringResource(R.string.current_day)
+                    1 -> stringResource(R.string.tomorrow)
+                    2 -> stringResource(R.string.day_after_tomorrow)
+                    else -> Strings.EMPTY_STRING
                 }
+
+                Text(
+                    text = dayText,
+                    fontSize = 20.sp,
+                    color = Color.White
+                )
+                Spacer(modifier = Modifier.height(16.dp))
+                LazyRow {
+                    items(dayData) { weatherData ->
+                        WeatherHourlyDisplay(
+                            weatherDataDomain = weatherData,
+                            modifier = Modifier
+                                .height(100.dp)
+                                .padding(horizontal = 16.dp)
+                        )
+                    }
+                }
+                Spacer(modifier = Modifier.height(24.dp))
             }
         }
-    }
 }
