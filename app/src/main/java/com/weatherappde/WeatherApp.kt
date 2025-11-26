@@ -6,6 +6,7 @@ import com.weatherappde.di.mapperModule
 import com.weatherappde.di.repositoryModule
 import com.weatherappde.di.retrofitModule
 import com.weatherappde.di.useCaseModule
+import com.weatherappde.di.vmModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
 
@@ -20,7 +21,8 @@ class WeatherApp : Application() {
                     repositoryModule,
                     useCaseModule,
                     locationModule,
-                    retrofitModule
+                    retrofitModule,
+                    vmModule
                 )
             )
         }
